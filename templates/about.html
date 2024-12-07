@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/header-normal.module.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/about.module.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/footer-normal.module.css') }}">
+{% endblock %}
+
+
+{% block body %}
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FoundIT Logo">
+    </div>
+    <nav class="navigation">
+        <a href="/">Home</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/faq">FAQ</a>
+    </nav>
+</header>
+
+<main>
+    <div class="about-section">
+        <h1>About us</h1>
+        <p>Our platform offers an innovative way to interact with videos, taking the viewing experience to a new level. We 
+            have created a system that allows users to fully utilize video content through convenient analysis tools. With our 
+            service, not only can you access subtitles, but you also gain a deeper understanding of the material. <br>
+            We can provide you with:</p>
+        <ul>
+            <li>Getting subtitles from video. Even if there are no subtitles on YouTube, we can create them for you using artificial intelligence.</li>
+            <li>We will help you with questions about the video. Our neural network will generate an answer based on the material in the text.</li>
+            <li>Too lazy to write questions from the text? Try permanent text scanning for all possible questions!</li>
+        </ul>
+    </div>
+    <div class="founder-section">
+        <img src="{{ url_for('static', filename='images/founder.jpg') }}" title="Та якийсь дурник." alt="Founder Img" class="founder-image" width="960px" height="1280px">
+        <div class="founder-info">
+            <h2>Founder</h2>   
+            <p>
+                This initiative was founded by <strong>Koval Yaroslav</strong>, whose vision is to make video content analysis and video 
+                viewing tasks easier for everyone who uses our platform!
+            </p>
+            <p>And he also does not want to be deducted from KPI.
+            </p>   
+            <p><i>"Don't waste your time, we don't have much of this resource!" | YAR</i>
+            </p>
+        </div>
+    </div>
+
+    <div class="service-section">
+        <h2>Service Information</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>Parameters</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Speed</td>
+                    <td>The speed of video analysis depends on its size. The larger the video, the longer it will take to 
+                        process.</td>
+                </tr>
+                <tr>
+                    <td>Integration</td>
+                    <td>YouTube does not allow direct subtitles from videos and blocks such activity. Therefore, subtitles 
+                        are received with a certain delay.</td>
+                </tr>
+                <tr>
+                    <td>Accessibility</td>
+                    <td>The interface is basic and clear. Every user will be able to understand it (except the blind).</td>
+                </tr>
+                <tr>
+                    <td>Language</td>
+                    <td>Our platform supports most languages, but for best accuracy it is better to use English.</td>
+                </tr>
+                <tr>
+                    <td>Dependence</td>
+                    <td>It should be understood that the speed and quality of our service depends on the capacity of our servers. In the initial stages, our 
+                        forces are limited.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Thank you for taking the time to read this text. I hope you had nowhere else to spend it and now you are happy 
+            with yourself. Have a good rest of your life!
+        </p>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-section">
+        <h2>NAVIGATE TO</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutus">About US</a></li>
+            <li><a href="/faq">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h2>GET IN TOUCH</h2>
+        <ul>
+            <li>
+                <a href="https://contacts.com">Contact
+                    <img src="{{ url_for('static', filename='images/contact.svg') }}" alt="Contact Icon" class="contact-icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com">Instagram
+                    <img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="Instagram Icon" class="instagram-icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com">Linkedin
+                    <img src="{{ url_for('static', filename='images/linkedin.svg') }}" alt="Linkedin Icon" class="linkedin-icon">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FoundIT Logo">
+    </div>
+
+    <div class="footer-qr">
+        <img src="{{ url_for('static', filename='images/qr-code.png') }}" alt="QR Code">
+    </div>
+</footer>
+{% endblock %}

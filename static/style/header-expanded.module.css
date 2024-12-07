@@ -1,0 +1,243 @@
+header {
+    background-color: #1f1f1f;
+    border-radius: 0 0 20px 20px;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.hero-section {
+    background-image: url(../images/hero-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    height: 730px;
+}
+
+.navigation-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    color: white;
+    gap: 850px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 140px;
+    height: 88px;;
+}
+
+.logo span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navigation {
+    display: flex;
+    gap: 50px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s; 
+}
+
+.navigation a[href="/"]:hover {
+    color: #ED4646;
+}
+
+.navigation a[href="/aboutus"]:hover {
+    color: #FFDE32;
+}
+
+.navigation a[href="/faq"]:hover {
+    color: #8075FF;
+}
+
+.call-to-action {
+    width: 710px;
+    margin: 0px auto;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding-right: 555px;
+}
+
+.action-button {
+    width: 240px;
+    height: 55px;
+    background-color: #ED4646;
+    border-radius: 10px;
+    font-family: 'Freeman', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1F1F1F;
+    text-decoration: none;
+    margin-top: 45px;
+}
+
+.line-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 15px;
+  }
+
+  .decor-line {
+    display: flex;
+    gap: 30px;
+  }
+
+  .decor-line div {
+    border-radius: 50px;
+    height: 3px;
+  }
+
+  .small-red {
+    background-color: #ED4646;
+    width: 68px;
+  }
+
+  .small-blue {
+    background-color: #8075FF;
+    width: 148px;
+  }
+
+  .small-yellow {
+    background-color: #FFDE32;
+    width: 288px;
+  }
+
+  .large-blue {
+    background-color: #8075FF;
+    width: 708px;
+  }
+
+  .large-yellow {
+    background-color: #FFDE32;
+    width: 128px;
+  }
+  
+  @keyframes moveLeftRight {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-20px); /* Зміщення вліво */
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .decor-line {
+    animation: moveLeftRight 6s ease-in-out infinite;
+  }
+
+.statistics-white { 
+    width: 100%;
+    height: 238px;
+    background-color: white;
+    color: #1F1F1F;
+    overflow: hidden;
+}
+
+.statistics-text-w {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.statistics-text-w div {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+}
+
+.statistics-white h1 {
+    font-family: 'Freeman', sans-serif;
+    font-size: 75px;
+}
+
+.statistics-white h2 {
+    width: 200px;
+    font-family: 'Inter', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dot-d {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #1F1F1F;
+}
+
+.dot-d:nth-child(1) {
+    opacity: 100%;
+    margin-right: -61px;
+}
+.dot-d:nth-child(2) {
+    opacity: 50%;
+    margin-right: -61px;
+}
+.dot-d:nth-child(3) {
+    opacity: 25%;
+}
+
+.statistics-black {
+    overflow: hidden;
+    gap: 100px;
+}
+
+.statistics-text-b {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.statistics-text-b div {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+}
+
+.statistics-black h2 {
+    width: 106px;
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.statistics-black h1 {
+    font-family: 'Freeman', sans-serif;
+    font-size: 50px;
+}
+
+.dot-w {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: white;
+}

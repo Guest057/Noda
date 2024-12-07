@@ -1,0 +1,282 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 125px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px
+}
+
+main {
+    display: flex;
+    gap: 150px;
+    flex-direction: column;
+}
+
+main h1 {
+    font-family: 'Freeman', sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 60px 0;
+  }
+
+main br {
+    margin-bottom: 40px;
+}
+
+.about-section {
+    width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-info {
+    width: 652px;
+    margin-left: 140px;
+}
+
+.site-info h1 {
+    text-align: left;
+}
+
+.site-info p {
+    font-size: 25px;
+}
+
+.about-section img {
+    max-width: 650px;
+    max-height: 750px;
+    object-fit: cover;
+    object-position: center left;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+    padding: 10px;
+    width: 950px;
+    margin: 0 auto;
+  }
+
+  /* Стиль блоку вибору мови */
+  .language-select {
+    padding: 0 15px;
+    color: #666;
+    font-weight: bold;
+  }
+
+  /* Стиль для поля інпуту */
+  .search-box input[type="text"] {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 55px 0 auto;
+    max-width: 780px;
+    text-align: center;
+  }
+
+  /* Стиль кнопки пошуку */
+  .search-button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 15px;
+    color: #666;
+  }
+
+.search-section p {
+    text-align: center;
+    font-size: 25px;
+    width: 910px;
+}
+
+.looking-dots {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 50px 0;
+}
+
+.looking-dots div {
+    display: flex;
+}
+
+.dot-r,
+.dot-y,
+.dot-b {
+    width: 17px;
+    height: 17px;
+    border-radius: 50px;
+}
+
+.dot-r {
+    background-color: #ED4646;
+}
+
+.dot-y {
+    background-color: #FFDE32;
+}
+
+.dot-b {
+    background-color: #8075FF;
+}
+
+.opacity-100 {
+    opacity: 100%;
+    margin-right: -5px;
+}
+.opacity-50 {
+    opacity: 50%;
+    margin-right: -5px;
+}
+.opacity-25 {
+    opacity: 25%;
+}
+
+.capabilities-section {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+}
+
+.capability-card {
+    width: 400px;
+    height: 500px;
+    perspective: 1000px;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  
+  .capability-card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    border: #1f1f1f solid;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: #1f1f1f;
+    background-color: white;
+  }
+  
+  .front {
+    align-items: center;
+    justify-content: center;
+    background-image: url('../images/capability-bg.png');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    gap: 50px;
+  }
+
+  .front img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 0px #00000014;
+  }
+
+  .front div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .front h3,
+  .front p {
+    margin: 5px 0;
+  }
+
+  .front h3 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .back {
+    text-align: left;
+    transform: rotateY(180deg);
+  }
+
+  .back p {
+    padding: 20px;
+  }
+
+ 
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Передній план */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Прозорий чорний фон */
+    z-index: 1;
+}
+
+.status-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    background: white;
+    border: 2px solid #1f1f1f;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.status-box p {
+    margin: 10px 0;
+}

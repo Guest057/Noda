@@ -1,0 +1,140 @@
+.footer {
+    background-color: #1F1F1F;
+    color: white;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    border-radius: 20px 20px 0 0;
+    margin-top: 100px;
+}
+
+footer h1 {
+    font-family: 'Freeman', sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+    margin: 50px 0 60px 0;
+}
+
+footer h2 {
+    font-family: 'Freeman', sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.comment-card {
+    width: 400px;
+    height: 299px;
+    background-color: #1F1F1F;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.user-information {
+    display: flex;
+    gap: 27px;
+    padding: 25px 0 0 25px;
+}
+
+.user-information div {
+    display: grid;
+}
+
+.comment-card img {
+    width: 81px;
+    height: 81px;
+    border-radius: 50px;
+}
+
+.comment-card h3 {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    align-items: center;
+}
+
+.time-period {
+    width: 90px;
+    height: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1F1F1F;
+    border-radius: 5px;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+
+}
+
+.red {
+    background-color: #ED4646;
+}
+
+.yellow {
+    background-color: #FFDE32;
+}
+
+.blue {
+    background-color: #8075FF;
+}
+
+.comment-card p {
+    padding-left: 25px;
+    width: 349px;
+}
+
+.additional-information {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding-bottom: 50px;
+}
+
+.footer-section {
+    text-align: left;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section li {
+    margin: 8px 0;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.footer-logo img {
+    width: 201px;
+    height: 127px;
+}
+
+.footer-qr {
+    display: flex;
+    align-items: center;
+    padding-top: 25px;
+}
+
+.footer-qr img {
+    width: 151px;
+    height: 151px;
+}

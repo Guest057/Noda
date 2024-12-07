@@ -1,0 +1,81 @@
+html,
+body {
+  height: 100%; /* Задає повну висоту для сторінки */
+  margin: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px
+}
+
+main {
+    margin: 0px auto;
+    width: 1300px;
+    min-height: 73%;
+}
+
+main h1 {
+    font-family: 'Freeman', sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+main h2 {
+    margin-top: 0px;
+    font-family: 'Freeman', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.about-section,
+.service-section {
+    width: 1085px; 
+}
+
+.founder-section,
+.about-section {
+    margin-bottom: 60px;
+}
+
+.founder-section {
+    display: flex;
+    align-items: flex-start; /* Вирівнює зображення та текст зверху */
+    gap: 20px; /* Відступ між зображенням та текстом */
+}
+
+.founder-image {
+    width: 340px;
+    height: 350px;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+.founder-info  {
+    margin-left: 40px;
+    width: 495px;
+    height: 203px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table tr,
+table td {
+    border: 1px solid #5B5B5B;
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.25s; 
+}
+
+table thead {
+    background-color: #E5E5E5;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f177;
+}

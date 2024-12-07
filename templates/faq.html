@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/header-normal.module.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/faq.module.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/footer-normal.module.css') }}">
+{% endblock %}
+
+
+{% block body %}
+<header class="header">
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FoundIT Logo">
+    </div>
+    <nav class="navigation">
+        <a href="/">Home</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/faq">FAQ</a>
+    </nav>
+</header>
+
+<main>
+    <div class="faqs-container">
+        <h1>FAQ</h1>
+        <p>Welcome to our FAQ section! Here, you’ll find answers to the most common questions about our platform and how it works. 
+          Whether you’re curious about analyzing YouTube videos, exploring subtitles, or discovering how AI-generated answers can enhance your learning experience, 
+          this page has you covered. If you don’t see your question here, feel free to reach out – we’re here to help!</p>
+        <hr>
+        <div class="questions-container">
+          <div class="content-container">
+            <div class="faq-header">
+              <h2>How does the platform retrieve subtitles from YouTube videos?</h2>
+              <span class="open active">+</span>
+              <span class="close">-</span>
+            </div>
+            
+            <div class="content">
+              <li>
+                YouTube does not allow direct subtitles from videos and blocks such activity.
+                Therefore, the video is first downloaded and then analyzed by AI. 
+                This allows you to get subtitles but gives a certain delay depending on the length of the video.
+              </li>
+            </div>
+          </div>
+  
+          <div class="content-container">
+            <div class="faq-header">
+              <h2>What types of questions can I ask about a video?</h2>
+              <span class="open active">+</span>
+              <span class="close">-</span>
+            </div>
+  
+            <div class="content">
+              <li>
+                You can ask any questions related to the material presented in the video. 
+                And even if your question is not related to the video - Shea will simply not answer 
+                you and will suggest other topics for discussion.
+              </li>
+            </div>
+          </div>
+  
+          <div class="content-container">
+            <div class="faq-header">
+              <h2>Can I upload my own videos, or is it only for YouTube links?</h2>
+              <span class="open active">+</span>
+              <span class="close">-</span>
+            </div>
+  
+            <div class="content">
+              <li>
+                We do not currently have such a feature. But our system foresees such a possibility in the future.
+              </li>
+            </div>
+          </div>
+
+          <div class="content-container">
+            <div class="faq-header">
+              <h2>How accurate are the AI-generated answers?</h2>
+              <span class="open active">+</span>
+              <span class="close">-</span>
+            </div>
+  
+            <div class="content">
+              <li>
+                Considering that the answer is given based on the video. 
+                The accuracy of the answer depends on the material that was provided. 
+                But if you encounter artifacts in the answer - contact tech support
+              </li>
+            </div>
+          </div>
+
+          <div class="content-container">
+            <div class="faq-header">
+              <h2>What languages are supported for subtitle analysis?</h2>
+              <span class="open active">+</span>
+              <span class="close">-</span>
+            </div>
+  
+            <div class="content">
+              <li>
+                We support almost all languages. 
+                But it is important to note that the best result will be provided using English. 
+                Also, the AI ​​will provide the answer in English - you need to specify the language in which you want to receive the answer.
+              </li>
+            </div>
+          </div>
+
+          <div class="content-container">
+            <div class="faq-header">
+              <h2>Is there a limit to how many questions I can ask per video?</h2>
+              <span class="open active">+</span>
+              <span class="close">-</span>
+            </div>
+  
+            <div class="content">
+              <li>
+                There is no limit to the number of questions you can ask. 
+                You are only limited by your imagination and purpose.
+              </li>
+            </div>
+          </div>
+
+          <div class="content-container">
+            <div class="faq-header">
+              <h2>Why is the site so slow sometimes?</h2>
+              <span class="open active">+</span>
+              <span class="close">-</span>
+            </div>
+  
+            <div class="content">
+              <li>
+                Our project is at an early stage. 
+                Right now we don't have large capacities, so we are using the most economical solutions for our resource. 
+                In further development, everything should improve.
+              </li>
+            </div>
+          </div>
+
+        </div>
+      </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-section">
+        <h2>NAVIGATE TO</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutus">About US</a></li>
+            <li><a href="/faq">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h2>GET IN TOUCH</h2>
+        <ul>
+            <li>
+                <a href="https://contacts.com">Contact
+                    <img src="{{ url_for('static', filename='images/contact.svg') }}" alt="Contact Icon" class="contact-icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com">Instagram
+                    <img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="Instagram Icon" class="instagram-icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com">Linkedin
+                    <img src="{{ url_for('static', filename='images/linkedin.svg') }}" alt="Linkedin Icon" class="linkedin-icon">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FoundIT Logo">
+    </div>
+
+    <div class="footer-qr">
+        <img src="{{ url_for('static', filename='images/qr-code.png') }}" alt="QR Code">
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='scripts/faq-animation.js') }}"></script>
+{% endblock %}

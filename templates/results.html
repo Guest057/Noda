@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style/header-normal.module.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/results.module.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/footer-normal.module.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style/loader.module.css') }}">
+{% endblock %}
+
+
+{% block body %}
+<header>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FoundIT Logo">
+    </div>
+    <nav class="navigation">
+        <a href="/">Home</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/faq">FAQ</a>
+    </nav>
+</header>
+
+<main>
+    <div class="tabs">
+        <div class="tab section1 active" onclick="showSection(1)">Subtitles</div>
+        <div class="tab section2" onclick="showSection(2)">Question</div>
+        <div class="tab section3" onclick="showSection(3)">Prompt</div>
+    </div>
+
+    <div id="section1" class="content active">
+        <div class="section-head">
+            <h2>Text from video</h2>
+        </div>
+        <hr>
+
+        <p>{{ subtitles }}</p>
+
+        <div class="looking-dots">
+            <div>
+                <div class="dot-r opacity-100"></div>
+                <div class="dot-r opacity-50"></div>
+                <div class="dot-r opacity-25"></div>
+            </div>
+            <div>
+                <div class="dot-y opacity-100"></div>
+                <div class="dot-y opacity-50"></div>
+                <div class="dot-y opacity-25"></div>
+            </div>
+            <div>
+                <div class="dot-b opacity-100"></div>
+                <div class="dot-b opacity-50"></div>
+                <div class="dot-b opacity-25"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section2" class="content">
+        <div id="question-content">
+            <div class="section-head">
+                <h2>Questions extracter</h2>
+                <div id="question-loader" class="loader-animation htmx-indicator"></div>
+                <button
+                    class="head-button"
+                    hx-post="/writequestions"
+                    hx-trigger="click"
+                    hx-target="#question-content"
+                    hx-swap="outerHTML"
+                    hx-disabled-elt="this"
+                    hx-indicator="#question-loader"
+                >
+                    Find questions
+                </button>
+            </div>
+            <hr>
+        </div>       
+        <div class="looking-dots">
+            <div>
+                <div class="dot-r opacity-100"></div>
+                <div class="dot-r opacity-50"></div>
+                <div class="dot-r opacity-25"></div>
+            </div>
+            <div>
+                <div class="dot-y opacity-100"></div>
+                <div class="dot-y opacity-50"></div>
+                <div class="dot-y opacity-25"></div>
+            </div>
+            <div>
+                <div class="dot-b opacity-100"></div>
+                <div class="dot-b opacity-50"></div>
+                <div class="dot-b opacity-25"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section3" class="content">
+        <div class="section-head">
+            <h2>Free AI prompt</h2>
+            <div id="prompt-loader" class="loader-animation htmx-indicator"></div>
+            <div class="prompt-info">
+                <img src="{{ url_for('static', filename='images/usage.svg') }}" 
+                alt="Usage"
+                title="About&#10;This is the input for your questions regarding the text presented in the video. Enter your query and click the ▶️ button on the right or simply press Enter. If you want to stop generating the answer - click the ⏸️ button on the left."
+                >
+                <img src="{{ url_for('static', filename='images/recomendation.svg') }}" 
+                alt="Recomendations"
+                title="Recomendations&#10;For the stable operation of the site, it is recommended not to send a bunch of requests at the same time. It is advisable to use English as the main language and also not to ask questions that are not related to the context of the video. If you encounter incorrect operation of the site - try reloading it, if the problem persists, then notify technical support ⚙️ (support@gmail.com)"
+                >
+                <img src="{{ url_for('static', filename='images/warning.svg') }}" 
+                alt="Warning"
+                title="Warning&#10;If the site is giving you answers based on text that doesn't belong in your video, you have opened our site in multiple windows. ⚠️We don't have enough resources to allow you to do this, so please stop doing it.&#10;And one more thing. Our AI has a keen sense of humor, so don't pick on it."
+                >
+            </div>
+        </div>
+        <hr>
+
+        <div>
+            <p id="response"></p>
+        </div>
+
+        <div class="ask-form">
+            <button onclick="htmx.trigger('#ai-prompt', 'htmx:abort')">
+                ⏸️
+            </button>
+
+            <form id="ai-prompt"
+                action="/ask" 
+                method="POST" 
+                hx-post="/ask" 
+                hx-target="#response" 
+                hx-swap="outerHTML"
+                hx-indicator="#prompt-loader"
+                hx-disabled-elt="find input[type='text'], find button[type='submit']"
+                >
+
+                <input
+                    id="massaqe-input"
+                    type="text" 
+                    id="question" 
+                    name="question" 
+                    placeholder="Message for Ollama"
+                    required
+                    >
+                
+                <button type="submit">
+                    ▶️
+                </button>
+            </form>
+        </div>
+        <div class="looking-dots">
+            <div>
+                <div class="dot-r opacity-100"></div>
+                <div class="dot-r opacity-50"></div>
+                <div class="dot-r opacity-25"></div>
+            </div>
+            <div>
+                <div class="dot-y opacity-100"></div>
+                <div class="dot-y opacity-50"></div>
+                <div class="dot-y opacity-25"></div>
+            </div>
+            <div>
+                <div class="dot-b opacity-100"></div>
+                <div class="dot-b opacity-50"></div>
+                <div class="dot-b opacity-25"></div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-section">
+        <h2>NAVIGATE TO</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutus">About US</a></li>
+            <li><a href="/faq">FAQ</a></li>
+        </ul>
+    </div>
+    <div class="footer-section">
+        <h2>GET IN TOUCH</h2>
+        <ul>
+            <li>
+                <a href="https://contacts.com">Contact
+                    <img src="{{ url_for('static', filename='images/contact.svg') }}" alt="Contact Icon" class="contact-icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com">Instagram
+                    <img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="Instagram Icon" class="instagram-icon">
+                </a>
+            </li>
+            <li>
+                <a href="https://linkedin.com">Linkedin
+                    <img src="{{ url_for('static', filename='images/linkedin.svg') }}" alt="Linkedin Icon" class="linkedin-icon">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer-logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="FoundIT Logo">
+    </div>
+
+    <div class="footer-qr">
+        <img src="{{ url_for('static', filename='images/qr-code.png') }}" alt="QR Code">
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='scripts/tab-switch.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/question-select.js') }}"></script>
+{% endblock %}
+

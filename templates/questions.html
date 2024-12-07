@@ -1,0 +1,16 @@
+<div class="section-head">
+    <h2>Questions extracter</h2>
+    <div id="question-loader" class="loader-animation htmx-indicator"></div>
+    <button class="head-button get-question-button"
+    onclick="inputContent(), showSection(3)">
+        Get answers
+    </button>
+</div>
+<hr>
+
+{% for question in questions %}
+<div class="question-block">
+    <div class="question" onclick="toggleIndicator(this)">{{ question }}</div>
+    <span class="indicator"></span>
+</div>
+{% endfor %}
