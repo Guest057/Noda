@@ -1,0 +1,6 @@
+flask
+markdown
+ollama
+yt-dlp
+whisper
+waitress
