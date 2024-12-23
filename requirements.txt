@@ -2,5 +2,5 @@ flask
 markdown
 ollama
 yt-dlp
-whisper
+openai-whisper
 waitress
