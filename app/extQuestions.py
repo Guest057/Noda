@@ -1,5 +1,7 @@
-import ollama
+from ollama import Client
 import re
+
+client = Client(host='http://ollama:11434')
 
 def getQuestions (cont):
     response = ''
