@@ -23,7 +23,7 @@ services:
     depends_on:
       - ollama
     ports:
-      - "4000:8080"
+      - "5555:8080"
     environment:
       - OLLAMA_BASE_URLS=http://ollama:11434 #comma separated ollama hosts
       - LLM=llama3
