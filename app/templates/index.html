@@ -115,10 +115,16 @@
     </div>
     
     <div class="search-section" id="search">
-    <h1>Let's start the search</h1>
-        <form form action="/" method="POST" class="search-box">
+        <h1>Let's start the search</h1>
+        <form action="/" method="POST" class="search-box" onsubmit="return validateYouTubeUrl()">
             <div class="language-select">TRY ME</div>
-            <input type="text" id="videoUrl" placeholder="Search..." name="videoUrl" required> 
+            <input 
+                type="text" 
+                id="videoUrl" 
+                placeholder="Enter YouTube link..." 
+                name="videoUrl" 
+                required
+            >
             <button type="submit" class="search-button">🔍</button>
         </form>
         <p>Our service helps analyze videos and extract information so you can find answers to your questions. 
@@ -284,9 +290,5 @@
 </footer>
 
 <script src="{{ url_for('static', filename='scripts/num-counting.js') }}"></script>
-<script>
-    document.querySelector('form').addEventListener('submit', function () {
-        document.getElementById('loader').style.display = 'flex';
-    });
-</script>
+<script src="{{ url_for('static', filename='scripts/link-validation.js') }}"></script>
 {% endblock %}
