@@ -1,12 +1,13 @@
 from ollama import Client
 import re
+import os
 
-client = Client(host='http://ollama:11434')
+client = Client(host=os.getenv('OLLAMA_URL'))
 
 def getQuestions (cont):
     response = ''
 
-    stream = ollama.chat(
+    stream = client.chat(
         model='llama3',
         messages=[{
             'role': 'user',
@@ -24,7 +25,7 @@ def getQuestions (cont):
 def getAsk(cont, ques):
     response = ''
 
-    stream = ollama.chat(
+    stream = client.chat(
         model='llama3',
         messages=[{'role': 'user', 
                 'content': 'Read this text: ' + cont + '. I have a question(s): ' + ques
