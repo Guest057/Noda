@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout code
+        uses: actions/checkout@v4
+      -
+        name: Ruff check
+        uses: astral-sh/ruff-action@v2
+        with:
+          src: "./app"
